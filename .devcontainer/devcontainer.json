@@ -16,7 +16,6 @@
         "ms-python.python",         // Python extension
         "ms-python.vscode-pylance", // Language server / IntelliSense
         "ms-python.debugpy",        // Debugger
-        "charliermarsh.ruff"        // Optional: Python linting/formatting
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python",
