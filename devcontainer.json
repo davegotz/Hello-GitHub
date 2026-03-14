@@ -1,0 +1,39 @@
+{
+  "name": "Python 3 Dev",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+
+  // Install Python via the Dev Containers Python feature
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"      // Change to 3.12, 3.10, etc.
+    }
+  },
+
+  // VS Code setup for Python development (interpreter + debugger)
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",         // Python extension
+        "ms-python.vscode-pylance", // Language server / IntelliSense
+        "ms-python.debugpy",        // Debugger
+        "charliermarsh.ruff"        // Optional: Python linting/formatting
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.analysis.typeCheckingMode": "basic",
+        "python.testing.pytestEnabled": true,
+        "python.testing.unittestEnabled": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll": "explicit",
+          "source.organizeImports": "explicit"
+        }
+      }
+    }
+  },
+
+  // Install dependencies automatically if a requirements file exists
+  "postCreateCommand": "python -m pip install --upgrade pip && pip install -r requirements.txt || true",
+
+  "remoteUser": "vscode"
+}
