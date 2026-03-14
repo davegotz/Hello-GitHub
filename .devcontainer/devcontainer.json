@@ -5,7 +5,7 @@
   // Install Python via the Dev Containers Python feature
   "features": {
     "ghcr.io/devcontainers/features/python:1": {
-      "version": "3.11"      // Change to 3.12, 3.10, etc.
+      "version": "3.14"
     }
   },
 
